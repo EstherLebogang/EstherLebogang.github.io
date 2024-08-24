@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0B1120;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .navbar h1 {
+            font-size: 1.5em;
+            color: #fff;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #3B82F6;
+        }
+
+        .hero {
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 20px;
+            background-color: #0F172A;
+            border-radius: 20px;
+        }
+		
+		
+		
+		/* Button Styling */
+    .btn {
+        background-color: #3B82F6;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    /* Hover Effect */
+    .btn:hover {
+        background-color: #2563EB; /* Slightly darker blue */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+        transform: translateY(-3px); /* Slightly lift the button */
+    }
+		
+		
+		
+		/* Keyframes for fade-in effect */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Keyframes for slide-in effect */
+    @keyframes slideIn {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    /* Apply animations to h1 elements */
+    .hero-text h1 {
+        animation: fadeIn 4s ease-out forwards;
+        opacity: 0; /* Initially hide the element */
+    }
+
+    /* Apply animations to h2 elements */
+    .hero-text h2 {
+        animation: slideIn 1.5s ease-out forwards;
+        opacity: 0; /* Initially hide the element */
+        animation-delay: 0.5s; /* Delay the animation */
+    }
+
+    /* Apply animations to p element */
+    .hero-text p {
+        animation: slideIn 1.5s ease-out forwards;
+        opacity: 0; /* Initially hide the element */
+        animation-delay: 1s; /* Delay the animation */
+    }
+		
+		
+		/* Typewriter text effect */
+    .typewriter-text {
+        border-right: 2px solid #3B82F6;
+        font-family: 'Courier New', Courier, monospace;
+        color: #3B82F6;
+        white-space: nowrap;
+        overflow: hidden;
+        display: inline-block;
+    }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .hero-text .btn {
+            background-color: #3B82F6;
+            color: #fff;
+            padding: 15px 30px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .hero-text .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .hero-text .social-icons a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        .hero-text .social-icons a:hover {
+            color: #3B82F6;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: flex-end; /* Aligns the animation to the right */
+            align-items: center;
+            background-color: #0F172A;
+            padding: 20px;
+            border-radius: 20px;
+            width: 400px;
+            height: 400px;
+        }
+
+        .hero-image img,
+        #lottie-animation {
+            border-radius: 20px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image {
+                margin-top: 20px;
+                justify-content: center; /* Centers the animation on smaller screens */
+            }
+        }
+
+        /* About section styles */
+        
+		.about {
+        padding: 50px 20px;
+        background-color: #0F172A;
+        border-radius: 20px;
+        margin-top: 50px;
+    }
+
+    .about h2 {
+        font-size: 2.5em;
+        color: #3B82F6;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .about-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .about-animation {
+        flex: 1;
+        display: flex;
+        justify-content: left;
+    }
+
+    .about-text {
+        flex: 2;
+        max-width: 600px;
+    }
+
+    .about-text p {
+        font-size: 1.2em;
+        margin: 20px 0;
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .about-content {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .about-animation {
+            margin-bottom: 20px;
+        }
+    }
+	
+	
+	/* Initial state of the about-text: hidden and shifted slightly down */
+    .about-text {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    /* Class to make the about-text visible with a slide-in effect */
+    .about-text.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+	
+	
+	
+	
+	/* Skills Section Styling */
+    .skills {
+        background-color: #0F172A;
+        color: #fff;
+        padding: 50px 20px;
+        border-radius: 10px;
+		margin-top: 50px;
+    }
+
+    .skills h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5em;
+        color: #3B82F6;
+    }
+
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        justify-content: center;
+		max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .skill {
+        background-color: #1E293B;
+        border-radius: 10px;
+        padding: 20px;
+        width: 200px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .skill-icon {
+        font-size: 3em;
+        margin-bottom: 10px;
+        color: #3B82F6;
+    }
+
+    .skill-info h3 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #fff;
+    }
+
+    .progress {
+        background-color: #334155;
+        border-radius: 5px;
+        height: 8px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .progress-bar {
+        height: 100%;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        transition: width 0.6s ease;
+    }
+
+    /* Skill Progress Bars */
+    .html { width: 90%; background-color: #E44D26; }
+    .css { width: 85%; background-color: #1572B6; }
+    .javascript { width: 80%; background-color: #F7E02A; }
+    .python { width: 75%; background-color: #FFC0CB; }
+    .php { width: 70%; background-color: #787CB5; }
+    .cpp { width: 65%; background-color: #008000; }
+    .mysql { width: 60%; background-color: #00758F; }
+	
+	
+	
+	/* Projects Section Styling */
+    .projects {
+        background-color: #0F172A; /* Consistent background color */
+        color: #fff;
+        padding: 50px 20px;
+        border-radius: 10px;
+        margin-top: 50px; /* Margin to separate from other sections */
+    }
+
+    .projects h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5em;
+        color: #3B82F6; /* Highlight color */
+    }
+
+    .projects-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .project-card {
+        background-color: #0B1120;
+        border-radius: 10px;
+        overflow: hidden;
+        width: 300px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for elevation */
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px); /* Lift the card on hover */
+    }
+
+    .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-card:hover img {
+        opacity: 0.8; /* Slightly fade image on hover */
+    }
+
+    .project-info {
+        padding: 20px;
+    }
+
+    .project-info h3 {
+        margin: 0;
+        font-size: 1.8em;
+        color: #fff;
+    }
+
+    .project-info p {
+        font-size: 1em;
+        color: #d1d5db;
+        margin: 10px 0;
+    }
+
+    .project-info .btn {
+        display: inline-block;
+        background-color: #3B82F6;
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .project-info .btn:hover {
+        background-color: #2563EB; /* Slightly darker blue */
+        transform: translateY(-3px); /* Lift the button */
+    }
+	
+	
+	
+	/* Project Languages Icons Styling */
+    .project-languages {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .project-languages i {
+        font-size: 1.5em;
+        color: #3B82F6; /* Highlight color for icons */
+        transition: color 0.3s ease;
+    }
+
+    .project-languages i:hover {
+        color: #2563EB; /* Slightly darker blue on hover */
+    }
+	
+	
+	/* Contact Section Styling */
+    .contact {
+        background-color: #1E293B;
+        color: #fff;
+        padding: 50px 20px;
+        border-radius: 10px;
+        margin-top: 50px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5em;
+        color: #3B82F6;
+        position: relative;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .contact-details,
+    .contact-form {
+        background-color: #0F172A;
+        border-radius: 10px;
+        padding: 20px;
+        width: 100%;
+        max-width: 45%;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+    }
+
+    .contact-details h3,
+    .contact-form h3 {
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        color: #3B82F6;
+    }
+
+    .contact-details p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .contact-details ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .contact-details ul li {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-details ul li i {
+        font-size: 1.5em;
+        color: #3B82F6;
+    }
+
+    .contact-form form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        background-color: #1E293B;
+        border: 1px solid #3B82F6;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .contact-form button.btn {
+        background-color: #3B82F6;
+        color: #fff;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+        cursor: pointer;
+    }
+
+    .contact-form button.btn:hover {
+        background-color: #2563EB;
+    }
+
+    /* Animations */
+    .contact.appear h2,
+    .contact.appear .contact-details,
+    .contact.appear .contact-form {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-details,
+        .contact-form {
+            max-width: 100%;
+        }
+    }
+	
+	
+	
+	
+    /* Footer Styling */
+    .footer {
+        background-color: #0F172A;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        border-top: 1px solid #1E293B;
+        margin-top: 50px;
+    }
+
+    .footer .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer h3 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #3B82F6;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #3B82F6;
+    }
+
+    .footer p {
+        font-size: 1em;
+        margin-top: 10px;
+        color: #94A3B8;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .social-icons {
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+	
+	
+		
+		
+    </style>
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+	
+	<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const typewriterElement = document.querySelector('.typewriter-text');
+        const textToType = typewriterElement.getAttribute('data-text');
+        let currentIndex = 0;
+
+        function typeText() {
+            if (currentIndex < textToType.length) {
+                typewriterElement.textContent += textToType[currentIndex];
+                currentIndex++;
+                setTimeout(typeText, 100); // Adjust typing speed (in milliseconds)
+            }
+        }
+
+        typeText();
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const aboutText = document.querySelector('.about-text');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    aboutText.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.5  // Trigger when 50% of the about-text is visible
+        });
+
+        observer.observe(aboutText);
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const skills = document.querySelectorAll('.progress-bar');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBar = entry.target;
+                    progressBar.style.width = progressBar.dataset.progress;
+                    observer.unobserve(progressBar);
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        skills.forEach(skill => {
+            skill.dataset.progress = skill.style.width;
+            skill.style.width = '0%'; // Set initial width to 0%
+            observer.observe(skill);
+        });
+    });
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const contactSection = document.querySelector('.contact');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    contactSection.classList.add('appear');
+                    observer.unobserve(contactSection);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        observer.observe(contactSection);
+    });
+</script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <nav class="navbar">
+            <h1>Portfolio.</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <h1>Hello, It's Me</h1>
+                <h1>Esther Madibana</h1>
+                <h2>And I'm a <span class="typewriter-text" data-text="Software Developer"></span></h2>
+                <p>with 3 full years of Experience.</p>
+                <a href="#" class="btn">Download CV</a>
+            </div>
+
+            <div class="hero-image">
+                <dotlottie-player src="https://lottie.host/0adac4e3-728c-41e4-bce9-524784a4e437/dtT4VOrJr5.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
+            </div>
+        </section>
+
+        <!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <!-- Lottie Animation on the Left -->
+            <div class="about-animation">
+                <dotlottie-player src="https://lottie.host/86544008-259b-4d02-a002-984f4ea38158/FU9qE4YZg3.json" 
+                                  background="transparent" 
+                                  speed="1" 
+                                  loop 
+                                  autoplay 
+                                  style="width: 500px; height: 500px;">
+                </dotlottie-player>
+            </div>
+
+            <!-- About Text on the Right -->
+            <div class="about-text">
+                <p>Hi, I'm <strong>Esther Madibana</strong>, a dedicated Software Developer with a passion for creating efficient and innovative software solutions. With expertise in languages like Python, JavaScript, and C++, I focus on developing robust applications that solve real-world problems and enhance user experiences.</p>
+				<p>My journey into software development began with a fascination for technology and a desire to understand how things work behind the scenes. Over the years, this curiosity has blossomed into a career where I get to combine problem-solving with creativity, building software that makes a difference.</p>
+				<p>When I'm not writing code, I enjoy exploring emerging technologies, contributing to open-source communities, and refining my skills through continuous learning. I am driven by a love for innovation and am always eager to tackle new challenges that test my abilities and broaden my horizons.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="skills" class="skills">
+<div class="container">
+	<h2>My Skills</h2>
+	<div class="skills-container">
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fab fa-html5"></i> <!-- HTML icon -->
+			</div>
+			<div class="skill-info">
+				<h3>HTML</h3>
+				<div class="progress">
+					<div class="progress-bar html"></div>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fab fa-css3-alt"></i> <!-- CSS icon -->
+			</div>
+			<div class="skill-info">
+				<h3>CSS</h3>
+				<div class="progress">
+					<div class="progress-bar css"></div>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fab fa-js-square"></i> <!-- JavaScript icon -->
+			</div>
+			<div class="skill-info">
+				<h3>JavaScript</h3>
+				<div class="progress">
+					<div class="progress-bar javascript"></div>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fab fa-python"></i> <!-- Python icon -->
+			</div>
+			<div class="skill-info">
+				<h3>Python</h3>
+				<div class="progress">
+					<div class="progress-bar python"></div>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fab fa-php"></i> <!-- PHP icon -->
+			</div>
+			<div class="skill-info">
+				<h3>PHP</h3>
+				<div class="progress">
+					<div class="progress-bar php"></div>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fab fa-cplusplus"></i> <!-- C++ icon -->
+			</div>
+			<div class="skill-info">
+				<h3>C++</h3>
+				<div class="progress">
+					<div class="progress-bar cpp"></div>
+				</div>
+			</div>
+		</div>
+		<div class="skill">
+			<div class="skill-icon">
+				<i class="fas fa-database"></i> <!-- MySQL icon -->
+			</div>
+			<div class="skill-info">
+				<h3>MySQL</h3>
+				<div class="progress">
+					<div class="progress-bar mysql"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+
+
+<section id="projects" class="projects">
+    <div class="container">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+				<div class="project-card">
+					<img src="snake.webp" alt="Project 1">
+					<div class="project-info">
+						<h3>Snake Game</h3>
+						<p>This is a classic Snake Game developed to showcase my skills in python and game development.</p>
+						<a href="#" class="btn">View Project</a>
+						<div class="project-languages">
+							<i class="fab fa-python" title="Python"></i>
+						</div>
+					</div>
+				</div>
+				<div class="project-card">
+					<img src="tictac2.jpg" alt="Project 2">
+					<div class="project-info">
+						<h3>Tic Tac Toe Game</h3>
+						<p>This Tic Tac Toe game is a simple yet engaging project that demonstrates my proficiency in JavaScript and game logic implementation.</p>
+						<a href="#" class="btn">View Project</a>
+						<div class="project-languages">
+							<i class="fab fa-html5" title="HTML"></i>
+							<i class="fab fa-css3-alt" title="CSS"></i>
+							<i class="fab fa-js-square" title="JavaScript"></i>
+						</div>
+					</div>
+				</div>
+				<div class="project-card">
+					<img src="dicesimu.png" alt="Project 2">
+					<div class="project-info">
+						<h3>Dice Simulation</h3>
+						<p>This Dice Simulation project offers a virtual dice-rolling experience.</p>
+						<a href="#" class="btn">View Project</a>
+						<div class="project-languages">
+							<i class="fab fa-python" title="Python"></i>
+						</div>
+					</div>
+				</div>
+		</div>
+    </div>
+</section>
+
+</div>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-details">
+                <h3>Get in Touch</h3>
+                <p>If you'd like to work together or just say hello, feel free to contact me through the form or via the details below:</p>
+                <ul>
+                    <li><i class="fas fa-phone"></i> +27 72 491 8539</li>
+                    <li><i class="fas fa-envelope"></i> estherlebogang09@gmail.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> pretoria central, south africa</li>
+                </ul>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send a Message</h3>
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <h3>Connect with Me</h3>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/leboh_lebogang?igsh=NzYyZ2I2dWw0YTho&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/esther-lebogang-a68245306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourprofile" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.facebook.com/leboh.lebogang.39" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p>&copy; 2024 ESTHER MADIBANA. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
