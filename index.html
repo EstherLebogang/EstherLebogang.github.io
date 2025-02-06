@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Esther Lebogang - Junior Software Developer">
+    <meta name="keywords" content="software developer, portfolio, projects, HTML, CSS, JavaScript">
+    <meta name="author" content="Esther Lebogang">
     <title>Portfolio</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 	
@@ -85,6 +88,35 @@
         box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
         transform: translateY(-3px); /* Slightly lift the button */
     }
+
+
+	    /* Styles for mobile devices (devices with width up to 480px) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    header {
+        padding: 20px;
+    }
+
+    .content {
+        padding: 15px;
+    }
+
+    /* Make images smaller for mobile */
+    img {
+        width: 100%;
+    }
+}
+
+
+	    .dotlottie-container {
+    max-width: 100%;
+    width: 100%;
+    height: auto;  /* Maintain aspect ratio */
+}
+
 		
 		
 		
@@ -641,7 +673,22 @@
             gap: 15px;
         }
     }
-	
+
+
+	/* Default styles */
+.dotlottie-container {
+    width: 100%;
+    max-width: 500px;  /* Limit the max width for larger screens */
+    height: auto;
+}
+
+/* Media query for mobile devices (max width 480px) */
+@media (max-width: 480px) {
+    .dotlottie-container {
+        max-width: 300px;  /* Smaller size for mobile devices */
+    }
+}
+
 	
 		
 		
@@ -754,10 +801,11 @@
                 <p>with 3 full years of Experience.</p>
                 <a href="#" class="btn">Download CV</a>
             </div>
-
+           <div class="dotlottie-container">
             <div class="hero-image">
                 <dotlottie-player src="https://lottie.host/0adac4e3-728c-41e4-bce9-524784a4e437/dtT4VOrJr5.json" background="transparent" speed="1" loop autoplay></dotlottie-player>
             </div>
+	    </div>
         </section>
 
         <!-- About Section -->
@@ -767,13 +815,16 @@
         <div class="about-content">
             <!-- Lottie Animation on the Left -->
             <div class="about-animation">
-                <dotlottie-player src="https://lottie.host/86544008-259b-4d02-a002-984f4ea38158/FU9qE4YZg3.json" 
-                                  background="transparent" 
-                                  speed="1" 
-                                  loop 
-                                  autoplay 
-                                  style="width: 500px; height: 500px;">
-                </dotlottie-player>
+                <div class="dotlottie-container">
+    <dotlottie-player src="https://lottie.host/86544008-259b-4d02-a002-984f4ea38158/FU9qE4YZg3.json"  
+                      background="transparent" 
+                      speed="1" 
+                      loop 
+                      autoplay 
+                      style="width: 100%; height: auto;">
+    </dotlottie-player>
+</div>
+
             </div>
 
             <!-- About Text on the Right -->
